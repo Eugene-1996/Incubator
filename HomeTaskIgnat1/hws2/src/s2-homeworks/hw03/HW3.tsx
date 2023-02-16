@@ -41,7 +41,7 @@ const HW3 = () => {
 
     return (
         <div id={'hw3'}>
-            <div className={s2.hwTitle}>Hometask №1</div>
+            <div className={s2.hwTitle}>Hometask №3</div>
             {/*для автоматической проверки дз (не менять)*/}
 
             <div className={s2.hw}>

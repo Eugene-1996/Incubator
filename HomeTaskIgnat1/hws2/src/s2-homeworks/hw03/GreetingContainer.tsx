@@ -46,7 +46,7 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({
         // const nameNew = e.currentTarget.value
         setName(e.currentTarget.value) // need to fix
 
-        error && setError('Hello')
+        error && setError('')
         console.log(setName)
     }
 

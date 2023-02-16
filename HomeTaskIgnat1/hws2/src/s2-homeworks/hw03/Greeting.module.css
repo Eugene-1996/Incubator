@@ -17,7 +17,6 @@
 }
 
 .input {
-    color: green;
     width: 372px;
     height: 36px;
 }
@@ -26,7 +25,9 @@
 }
 
 .errorInput {
-    color: red
+    color: red;
+    width: 372px;
+    height: 36px;
 }
 
 .button {
