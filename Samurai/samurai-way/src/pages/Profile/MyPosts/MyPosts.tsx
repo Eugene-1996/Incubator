@@ -1,7 +1,7 @@
 import React from 'react';
+import { MyPostsTypes } from '../../..';
 import classes from './myposts-style.module.css'
 import Post from './Post/Post';
-import { MyPostsTypes } from '../../../render';
 
 
 

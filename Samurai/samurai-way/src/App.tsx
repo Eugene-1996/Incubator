@@ -9,8 +9,6 @@ import News from './pages/News/News';
 import Music from './pages/Music/Music';
 import Settings from './pages/Settings/Settings';
 import Friends from './pages/Friends/Friends';
-import { AppStateTypes, StatePropsType } from './render';
-import { updateNewPostText } from './redux/state';
 
 
 
@@ -55,7 +53,7 @@ function App (props: AppStateTypes2 ) {
         <Header />
         <Navigation />
         <div className='app-wrapper-content'>
-          <Route path='/profile' render={() => <Profile PostsData={props.state.ProfilePage.PostsData} newPostText={props.state.ProfilePage.newPostText} addPost={props.addPost} updateNewPostText={updateNewPostText} />} />
+          <Route path='/profile' render={() => <Profile PostsData={props.state.ProfilePage.PostsData} newPostText={props.state.ProfilePage.newPostText} addPost={props.addPost} updateNewPostText={props.updateNewPostText} />} />
           <Route path='/dialogs' render={() => <Dialogs DialogsData={props.state.MessagePage.DialogsData} MessagesData={props.state.MessagePage.MessagesData}/>} />
           <Route path='/news' component={News} />
           <Route path='/music' component={Music} />

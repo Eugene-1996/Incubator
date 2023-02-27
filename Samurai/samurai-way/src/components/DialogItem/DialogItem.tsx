@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom'
+import { DialogType } from '../../App'
 import classes from './DialogItem-style.module.css'
-import { DialogType } from '../../render'
 
 
 

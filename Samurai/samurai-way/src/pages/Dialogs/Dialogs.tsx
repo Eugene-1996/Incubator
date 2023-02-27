@@ -1,8 +1,8 @@
 import React from 'react';
+import { MyDialogsMessagesTypes } from '../..';
 import DialogItem from '../../components/DialogItem/DialogItem';
 import Message from '../../components/Message/Message';
 import classes from './dialogs-style.module.css'
-import { MyDialogsMessagesTypes } from '../../render';
 
 
 

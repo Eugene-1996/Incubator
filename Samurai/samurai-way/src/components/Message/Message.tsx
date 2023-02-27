@@ -1,5 +1,5 @@
+import { MessageType } from '../../App'
 import classes from './Message-style.module.css'
-import { MessageType } from '../../render'
 
 
 const Message = (props: MessageType) => {

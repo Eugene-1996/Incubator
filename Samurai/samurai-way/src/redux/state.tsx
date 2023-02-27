@@ -1,10 +1,11 @@
 // import { PostType } from "../render"
 
-import { rerenderEntireTree } from "../render"
+import { StatePropsType } from ".."
 
 
 
-let state = {
+let store = {
+  _state: {
     ProfilePage:{
         PostsData: [{
             
@@ -82,7 +83,36 @@ let state = {
           ]  
     },  
 
+},
+getState() {
+  return this._state;
+},
+rerenderEntireTree(state: StatePropsType) {
+  console.log('hello rerender')
+},
+addPost () {
+  let newPost: AddPostType= {
+    id: '5',
+    message: this._state.ProfilePage.newPostText,
+    likesCount: '0'
+  };
+  this._state.ProfilePage.PostsData.push(newPost)
+  this._state.ProfilePage.newPostText = ''
+  this.rerenderEntireTree(this._state)
+},
+updateNewPostText(newText:string) {
+  this._state.ProfilePage.newPostText = newText
+  this.rerenderEntireTree(this._state)
+},
+subscribe(observer: (state:StatePropsType) => void) {
+  this.rerenderEntireTree = observer    //  pattern
+ }
+ 
 }
+
+ 
+
+
 
 
 export type AddPostType= {
@@ -96,25 +126,15 @@ export type AddPostType= {
 //   postMessage: string
 // }
 
-export let addPost = () => {
-  let newPost: AddPostType= {
-    id: '5',
-    message: state.ProfilePage.newPostText,
-    likesCount: '0'
-  };
-  state.ProfilePage.PostsData.push(newPost)
-  state.ProfilePage.newPostText = ''
-  rerenderEntireTree(state)
-}
 
 
 
-export let updateNewPostText = (newText:string) => {
-  state.ProfilePage.newPostText = newText
-  rerenderEntireTree(state)
-}
 
-export default state
+
+
+
+export default store
+// window.store = store;
 
 
 
